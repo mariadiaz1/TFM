@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Consulta de Fraude</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    form {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 15px;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #555;
+    }
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    /* El botón ocupará toda la fila */
+    .full-width {
+      grid-column: 1 / -1;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .resultado {
+      margin-top: 20px;
+      padding: 20px;
+      background: #e9ecef;
+      border-left: 5px solid #007bff;
+      border-radius: 4px;
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .resultado span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Consulta de Fraude</h1>
+    <form id="fraudeForm">
+      <!-- Variables V1 a V28 -->
+      <div class="field">
+        <label for="V1">V1:</label>
+        <input type="number" step="any" id="V1" name="V1" value="-439.797444171999" required>
+      </div>
+      <div class="field">
+        <label for="V2">V2:</label>
+        <input type="number" step="any" id="V2" name="V2" value="135.836702839758" required>
+      </div>
+      <div class="field">
+        <label for="V3">V3:</label>
+        <input type="number" step="any" id="V3" name="V3" value="-25.928442182573" required>
+      </div>
+      <div class="field">
+        <label for="V4">V4:</label>
+        <input type="number" step="any" id="V4" name="V4" value="267.978696694832" required>
+      </div>
+      <div class="field">
+        <label for="V5">V5:</label>
+        <input type="number" step="any" id="V5" name="V5" value="-112.813094208956" required>
+      </div>
+      <div class="field">
+        <label for="V6">V6:</label>
+        <input type="number" step="any" id="V6" name="V6" value="-170.653638774951" required>
+      </div>
+      <div class="field">
+        <label for="V7">V7:</label>
+        <input type="number" step="any" id="V7" name="V7" value="-349.619729302467" required>
+      </div>
+      <div class="field">
+        <label for="V8">V8:</label>
+        <input type="number" step="any" id="V8" name="V8" value="-0.248777743025673" required>
+      </div>
+      <div class="field">
+        <label for="V9">V9:</label>
+        <input type="number" step="any" id="V9" name="V9" value="-0.24776789948008" required>
+      </div>
+      <div class="field">
+        <label for="V10">V10:</label>
+        <input type="number" step="any" id="V10" name="V10" value="-480.163740602813" required>
+      </div>
+      <div class="field">
+        <label for="V11">V11:</label>
+        <input type="number" step="any" id="V11" name="V11" value="489.584422347523" required>
+      </div>
+      <div class="field">
+        <label for="V12">V12:</label>
+        <input type="number" step="any" id="V12" name="V12" value="-109.128193194019" required>
+      </div>
+      <div class="field">
+        <label for="V13">V13:</label>
+        <input type="number" step="any" id="V13" name="V13" value="0.184371685834387" required>
+      </div>
+      <div class="field">
+        <label for="V14">V14:</label>
+        <input type="number" step="any" id="V14" name="V14" value="-677.109672468083" required>
+      </div>
+      <div class="field">
+        <label for="V15">V15:</label>
+        <input type="number" step="any" id="V15" name="V15" value="-0.00732618257771211" required>
+      </div>
+      <div class="field">
+        <label for="V16">V16:</label>
+        <input type="number" step="any" id="V16" name="V16" value="-735.808322132346" required>
+      </div>
+      <div class="field">
+        <label for="V17">V17:</label>
+        <input type="number" step="any" id="V17" name="V17" value="-125.984185405511" required>
+      </div>
+      <div class="field">
+        <label for="V18">V18:</label>
+        <input type="number" step="any" id="V18" name="V18" value="-513.154862842983" required>
+      </div>
+      <div class="field">
+        <label for="V19">V19:</label>
+        <input type="number" step="any" id="V19" name="V19" value="0.308333945758691" required>
+      </div>
+      <div class="field">
+        <label for="V20">V20:</label>
+        <input type="number" step="any" id="V20" name="V20" value="-0.17160787864796" required>
+      </div>
+      <div class="field">
+        <label for="V21">V21:</label>
+        <input type="number" step="any" id="V21" name="V21" value="0.573574068424352" required>
+      </div>
+      <div class="field">
+        <label for="V22">V22:</label>
+        <input type="number" step="any" id="V22" name="V22" value="0.176967718048195" required>
+      </div>
+      <div class="field">
+        <label for="V23">V23:</label>
+        <input type="number" step="any" id="V23" name="V23" value="-0.436206883597401" required>
+      </div>
+      <div class="field">
+        <label for="V24">V24:</label>
+        <input type="number" step="any" id="V24" name="V24" value="-0.0535018648884285" required>
+      </div>
+      <div class="field">
+        <label for="V25">V25:</label>
+        <input type="number" step="any" id="V25" name="V25" value="0.252405261951833" required>
+      </div>
+      <div class="field">
+        <label for="V26">V26:</label>
+        <input type="number" step="any" id="V26" name="V26" value="-0.657487754764504" required>
+      </div>
+      <div class="field">
+        <label for="V27">V27:</label>
+        <input type="number" step="any" id="V27" name="V27" value="-0.827135714578603" required>
+      </div>
+      <div class="field">
+        <label for="V28">V28:</label>
+        <input type="number" step="any" id="V28" name="V28" value="0.849573379985768" required>
+      </div>
+      <!-- Campo Amount también en el grid -->
+      <div class="field">
+        <label for="Amount">Amount:</label>
+        <input type="number" step="any" id="Amount" name="Amount" value="2.4" required>
+      </div>
+      <!-- Botón de envío ocupa toda la fila -->
+      <div class="full-width">
+        <button type="submit">Enviar Consulta</button>
+      </div>
+    </form>
+    <div class="resultado" id="resultado">
+      <!-- Aquí se mostrarán los resultados -->
+    </div>
+  </div>
+  <script>
+    document.getElementById("fraudeForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const formData = {
+        V1: parseFloat(document.getElementById("V1").value),
+        V2: parseFloat(document.getElementById("V2").value),
+        V3: parseFloat(document.getElementById("V3").value),
+        V4: parseFloat(document.getElementById("V4").value),
+        V5: parseFloat(document.getElementById("V5").value),
+        V6: parseFloat(document.getElementById("V6").value),
+        V7: parseFloat(document.getElementById("V7").value),
+        V8: parseFloat(document.getElementById("V8").value),
+        V9: parseFloat(document.getElementById("V9").value),
+        V10: parseFloat(document.getElementById("V10").value),
+        V11: parseFloat(document.getElementById("V11").value),
+        V12: parseFloat(document.getElementById("V12").value),
+        V13: parseFloat(document.getElementById("V13").value),
+        V14: parseFloat(document.getElementById("V14").value),
+        V15: parseFloat(document.getElementById("V15").value),
+        V16: parseFloat(document.getElementById("V16").value),
+        V17: parseFloat(document.getElementById("V17").value),
+        V18: parseFloat(document.getElementById("V18").value),
+        V19: parseFloat(document.getElementById("V19").value),
+        V20: parseFloat(document.getElementById("V20").value),
+        V21: parseFloat(document.getElementById("V21").value),
+        V22: parseFloat(document.getElementById("V22").value),
+        V23: parseFloat(document.getElementById("V23").value),
+        V24: parseFloat(document.getElementById("V24").value),
+        V25: parseFloat(document.getElementById("V25").value),
+        V26: parseFloat(document.getElementById("V26").value),
+        V27: parseFloat(document.getElementById("V27").value),
+        V28: parseFloat(document.getElementById("V28").value),
+        Amount: parseFloat(document.getElementById("Amount").value)
+      };
+
+      fetch("https://mifuncionfraude.azurewebsites.net/api/detectarfraude", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        const resultadoDiv = document.getElementById("resultado");
+        let fraudeTexto = data.fraude ? "Sí" : "No";
+        resultadoDiv.innerHTML = `
+          <p><span>Resultado de Fraude:</span> ${fraudeTexto}</p>
+          <p><span>Error de Reconstrucción:</span> ${data.error_reconstruccion}</p>
+        `;
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        document.getElementById("resultado").innerHTML = "<p>Ocurrió un error al procesar la consulta.</p>";
+      });
+    });
+  </script>
+</body>
+</html>
